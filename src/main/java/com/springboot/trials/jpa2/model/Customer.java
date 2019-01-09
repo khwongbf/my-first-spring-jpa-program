@@ -7,11 +7,13 @@ import java.util.List;
 public class Customer {
     @Id
     @GeneratedValue
-    private Long customerId;
+    private long customerId;
 
     @Embedded
     private Name name;
-    private String address;
+
+    @Embedded
+    private Address address;
 
     @ElementCollection
     private List<Phone> phones;
@@ -19,17 +21,17 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Long customerId, Name name, String address) {
+    public Customer(Long customerId, Name name, Address address) {
         this.customerId = customerId;
         this.name = name;
         this.address = address;
     }
 
-    public Long getCustomerId() {
+    public long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(Long customerId) {
+    public void setCustomerId(long customerId) {
         this.customerId = customerId;
     }
 
@@ -41,11 +43,11 @@ public class Customer {
         this.name = name;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
