@@ -22,8 +22,13 @@ public class CustomerController {
         customerService.addNewCustomer(customer);
     }
 
-    @GetMapping("/customers/{firstName}")
+    @GetMapping("/customers/firstName={firstName}")
     public List<Customer> getAllCustomersByFirstName(@PathVariable String firstName){
         return customerService.findAllCustomersByFirstName(firstName);
+    }
+
+    @GetMapping("/customers/streetNo={streetNo}")
+    public List<Customer> getAllCustomersByStreetNumber(@PathVariable int streetNo){
+        return customerService.findAllCustomersByStreetNumber(streetNo);
     }
 }

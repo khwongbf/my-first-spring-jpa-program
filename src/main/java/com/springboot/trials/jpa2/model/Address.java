@@ -2,11 +2,15 @@ package com.springboot.trials.jpa2.model;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 
 @Embeddable
 public class Address {
     @Column(name = "REMAINING_ADDRESS", nullable = false)
     private String remainder;
+
+    @Embedded
+    private Street street;
 
     @Column(name = "DISTRICT", nullable = false)
     private String district;
@@ -26,6 +30,14 @@ public class Address {
 
     public void setRemainder(String remainder) {
         this.remainder = remainder;
+    }
+
+    public Street getStreet() {
+        return street;
+    }
+
+    public void setStreet(Street street) {
+        this.street = street;
     }
 
     public String getDistrict() {

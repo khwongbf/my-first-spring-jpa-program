@@ -13,6 +13,10 @@ public class Customer {
     private Name name;
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "street.streetNumber",column = @Column(name = "STREET_NO")),
+            @AttributeOverride(name = "street.streetName", column = @Column(name = "STREET_NAME"))
+    })
     private Address address;
 
     @ElementCollection

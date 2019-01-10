@@ -23,4 +23,8 @@ public class CustomerService {
     public void addNewCustomer(Customer customer){
         customerRepository.save(customer);
     }
+
+    public List<Customer> findAllCustomersByStreetNumber(int streetNumber){
+        return customerRepository.findAllByAddress_Street_StreetNumber(streetNumber);
+    }
 }
